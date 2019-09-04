@@ -48,7 +48,7 @@ payload={
     "title": format(pageresults[rand]['name']),
     "text":suggestion
 }
-print(suggestion)
+print(payload)
 
 teams_response = r.post(teamsLunchBot, verify=False, headers=headers, json=payload)
 

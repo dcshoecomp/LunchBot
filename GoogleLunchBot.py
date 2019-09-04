@@ -22,7 +22,7 @@ pageresults = gplaces.json()['results']
 
 while nextpagetoken is not None:
     print('started a while loop')
-    nextpageurl = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?key={0}}&pagetoken={1}'.format(sys.argv[1],nextpagetoken)
+    nextpageurl = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?key={0}&pagetoken={1}'.format(sys.argv[1],nextpagetoken)
     nextpagetoken = None
     gplaces = r.get(nextpageurl, verify=False, headers=headers)
     if "next_page_token" in gplaces.json():

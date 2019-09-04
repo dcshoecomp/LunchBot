@@ -14,6 +14,7 @@ r = requests.Session()
 gplaces = r.get(url, verify=False, headers=headers)
 if "next_page_token" in gplaces.json():
     nextpagetoken = gplaces.json()['next_page_token'] 
+    time.sleep(5)
 else:
     nextpagetoken = None
 pageresults = gplaces.json()['results']
@@ -36,6 +37,7 @@ while nextpagetoken is not None:
         print('appending the pageresults {0}'.format(place['name']))
 
 rand=random.randint(0,len(pageresults))
+print(rand)
 suggestion = 'Rating:{0} located at <a href="https://www.google.com/maps/place/?q=place_id:{1}">{2}</a>'.format(pageresults[rand]['rating'],pageresults[rand]['place_id'],pageresults[rand]['vicinity'])
 teamsLunchBot = '{0}'.format(sys.argv[2])
 payload={

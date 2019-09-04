@@ -49,7 +49,8 @@ payload={
     "text":suggestion
 }
 print(suggestion)
-#teams_response = r.post(teamsLunchBot, verify=False, headers=headers, json=payload)
+
+teams_response = r.post(teamsLunchBot, verify=False, headers=headers, json=payload)
 
 #for place in pageresults:
 #    place['name']

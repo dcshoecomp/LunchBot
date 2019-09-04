@@ -1,20 +1,20 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+This is a bot that takes a location and radius and returns a list of resturants, it will then do a post request to a url. URL post format is based on microsoft Teams 
 
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+1.	Install python3
+2.	Only requirement is pypi.org/projects/requests pip3 install requests --user
+3.	google places API project setup on an account, you get a small number of requests free, good for once a day processsing
+    Create a project https://console.developers.google.com enable the Places API, and generate the credentials for an API Key
+    
+googleAPI_Key https://console.developers.google.com
+msTeams_Post_URL create a bot that uses incoming post URL
+GPS_coordinates in the google maps dropped pin format of xx.xxxxx,-xx.xxxxxx 
+Search_Radius in Meters
 
 # Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+python3 GoogleLunchBot.py $(googleAPI_Key) $(msTeams_Post_URL) $(GPS_coordinate) $(Search_Radius).
+
 
 # Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+TODO: 

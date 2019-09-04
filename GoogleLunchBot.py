@@ -8,10 +8,11 @@ import sys
 #arg3=gps coords
 #arg4=distance radius in meters
 
-url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={1}&radius={2}type=restaurant&fields=name&key={0}'.format(sys.argv[1],sys.argv[3],sys.argv[4])
+url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={1}&radius={2}&type=restaurant&fields=name&key={0}'.format(sys.argv[1],sys.argv[3],sys.argv[4])
 headers = {'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36'}
 r = requests.Session()
 gplaces = r.get(url, verify=False, headers=headers)
+print(gplaces.status_code)
 if "next_page_token" in gplaces.json():
     nextpagetoken = gplaces.json()['next_page_token'] 
     time.sleep(5)

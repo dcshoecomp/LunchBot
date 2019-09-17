@@ -37,7 +37,7 @@ while nextpagetoken is not None:
         pageresults.append(place)
         print('appending the pageresults {0}'.format(place['name']))
 
-rand=random.randint(0,len(pageresults))
+rand=random.randint(0,len(pageresults)-1)
 print(rand)
 suggestion = 'Rating:{0} located at <a href="https://www.google.com/maps/place/?q=place_id:{1}">{2}</a>'.format(pageresults[rand]['rating'],pageresults[rand]['place_id'],pageresults[rand]['vicinity'])
 teamsLunchBot = '{0}'.format(sys.argv[2])
